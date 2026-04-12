@@ -26,43 +26,48 @@
     }
 
     /* ============================================
-       THEME VARIABLES (Two-Color System)
-       Color 1: Light backgrounds (near-white)
-       Color 2: Dark text/elements (charcoal/black)
+       THEME VARIABLES
+       Dark mode is the default (as requested)
        ============================================ */
     :root {
-      /* Light mode (default) - Clean, airy, premium */
-      --bg-primary: #fafafc;
-      --bg-secondary: #ffffff;
-      --bg-tertiary: #f2f2f5;
-      --text-primary: #1d1d1f;
-      --text-secondary: #5e5e64;
-      --text-tertiary: #8e8e93;
-      --border-light: rgba(29, 29, 31, 0.06);
-      --border-medium: rgba(29, 29, 31, 0.1);
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.02);
-      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
-      --shadow-hover: 0 20px 40px -12px rgba(0, 0, 0, 0.06), 0 8px 16px -8px rgba(0, 0, 0, 0.04);
-      --button-bg: #1d1d1f;
-      --button-text: #ffffff;
+      /* Dark mode (default) - Your preferred colors */
+      --bg-primary: #151719;
+      --bg-secondary: #1a1e24;
+      --bg-tertiary: #2d333b;
+      --text-primary: #e4e6eb;
+      --text-secondary: #9aa1b0;
+      --text-muted: #6b7280;
+      --border-color: #2d333b;
+      --border-light: rgba(228, 230, 235, 0.08);
+      --border-medium: rgba(228, 230, 235, 0.12);
+      --accent-color: #e4e6eb;
+      --accent-hover: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.25);
+      --shadow-hover: 0 20px 40px -12px rgba(0, 0, 0, 0.35);
+      --button-bg: #e4e6eb;
+      --button-text: #0a0c10;
       --transition-smooth: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    /* Dark mode - Same two-color philosophy, inverted */
-    body.dark-mode {
-      --bg-primary: #1c1c1e;
-      --bg-secondary: #262628;
-      --bg-tertiary: #2c2c2e;
-      --text-primary: #f5f5f7;
-      --text-secondary: #98989e;
-      --text-tertiary: #8e8e93;
-      --border-light: rgba(255, 255, 255, 0.06);
-      --border-medium: rgba(255, 255, 255, 0.1);
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
-      --shadow-hover: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
-      --button-bg: #f5f5f7;
-      --button-text: #1d1d1f;
+    /* Light mode - Inverted version of the dark theme */
+    body.light-mode {
+      --bg-primary: #f5f7fa;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #e9eef3;
+      --text-primary: #151719;
+      --text-secondary: #4a5568;
+      --text-muted: #64748b;
+      --border-color: #d1d9e6;
+      --border-light: rgba(21, 23, 25, 0.06);
+      --border-medium: rgba(21, 23, 25, 0.1);
+      --accent-color: #151719;
+      --accent-hover: #0a0c10;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+      --button-bg: #151719;
+      --button-text: #ffffff;
     }
 
     /* ============================================
@@ -127,13 +132,13 @@
     }
 
     .nav-link:hover {
-      color: var(--text-primary);
+      color: var(--accent-hover);
     }
 
     .nav-link.active {
-      color: var(--text-primary);
+      color: var(--accent-color);
       font-weight: 540;
-      border-bottom-color: var(--text-primary);
+      border-bottom-color: var(--accent-color);
     }
 
     /* Theme toggle button */
@@ -155,7 +160,7 @@
 
     .theme-toggle:hover {
       background-color: var(--border-medium);
-      color: var(--text-primary);
+      color: var(--accent-hover);
     }
 
     /* ============================================
@@ -239,14 +244,21 @@
     }
 
     .contact-button:hover {
-      background: var(--text-primary);
-      color: var(--bg-primary);
+      background: var(--accent-hover);
       box-shadow: var(--shadow-md);
       transform: scale(1.02);
     }
 
+    body.light-mode .contact-button:hover {
+      color: var(--button-text);
+    }
+
+    body:not(.light-mode) .contact-button:hover {
+      color: var(--button-text);
+    }
+
     .weather-time {
-      color: var(--text-tertiary);
+      color: var(--text-muted);
       font-size: 1rem;
       font-weight: 430;
       letter-spacing: -0.01em;
@@ -265,7 +277,7 @@
     }
 
     .social-icons a:hover {
-      color: var(--text-primary);
+      color: var(--accent-hover);
       transform: translateY(-2px);
     }
 
@@ -281,7 +293,7 @@
       border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
       object-fit: cover;
       box-shadow: var(--shadow-hover);
-      border: 1px solid var(--border-light);
+      border: 2px solid var(--border-light);
       transition: transform 0.4s ease;
     }
 
@@ -302,6 +314,7 @@
       font-weight: 600;
       letter-spacing: -0.02em;
       margin-bottom: 0.4rem;
+      color: var(--text-primary);
     }
 
     .portfolio-subtitle {
@@ -364,7 +377,7 @@
     }
 
     .portfolio-date-text {
-      color: var(--text-tertiary);
+      color: var(--text-muted);
       display: flex;
       align-items: center;
       gap: 0.2rem;
@@ -377,6 +390,7 @@
       letter-spacing: -0.02em;
       margin-bottom: 1rem;
       line-height: 1.25;
+      color: var(--text-primary);
     }
 
     /* Preview area styling */
@@ -390,9 +404,14 @@
     }
 
     .pocket-gym-preview {
-      background: #f2f0ed;
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
-      color: #1d1d1f;
+      background: #2a2a2a;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+      color: #e4e6eb;
+    }
+
+    body.light-mode .pocket-gym-preview {
+      background: #f0ede8;
+      color: #151719;
     }
 
     /* Pocket gym specific micro-styles */
@@ -411,7 +430,7 @@
     }
 
     .gym-mini-icon {
-      background: #e2dfda;
+      background: #3a4048;
       width: 20px;
       height: 20px;
       border-radius: 6px;
@@ -420,12 +439,20 @@
       justify-content: center;
     }
 
+    body.light-mode .gym-mini-icon {
+      background: #e2dfda;
+    }
+
     .gym-mini-badge {
-      background: #ddd9d3;
+      background: #3a4048;
       padding: 0.15rem 0.6rem;
       border-radius: 20px;
       font-size: 0.65rem;
       font-weight: 600;
+    }
+
+    body.light-mode .gym-mini-badge {
+      background: #ddd9d3;
     }
 
     .gym-mini-exercises {
@@ -438,10 +465,14 @@
     .gym-mini-exercise {
       display: flex;
       justify-content: space-between;
-      background: #f0ede8;
+      background: #3a4048;
       padding: 0.2rem 0.5rem;
       border-radius: 12px;
       font-size: 0.7rem;
+    }
+
+    body.light-mode .gym-mini-exercise {
+      background: #f0ede8;
     }
 
     .gym-mini-sets {
@@ -451,7 +482,11 @@
     .gym-mini-footer {
       margin-top: 0.3rem;
       padding-top: 0.3rem;
-      border-top: 1px dashed #ccc;
+      border-top: 1px dashed #4a5058;
+    }
+
+    body.light-mode .gym-mini-footer {
+      border-top-color: #ccc;
     }
 
     .gym-mini-phases {
@@ -464,7 +499,7 @@
     .phase-dot {
       width: 5px;
       height: 5px;
-      background: #8e8e93;
+      background: var(--text-muted);
       border-radius: 50%;
     }
 
@@ -507,6 +542,7 @@
 
     .view-project:hover {
       gap: 0.7rem;
+      color: var(--accent-hover);
     }
 
     /* ============================================
@@ -516,7 +552,7 @@
       margin-top: 4rem;
       padding-top: 2rem;
       text-align: center;
-      color: var(--text-tertiary);
+      color: var(--text-muted);
       border-top: 1px solid var(--border-light);
       font-size: 0.9rem;
     }
@@ -555,7 +591,7 @@
       border-radius: 28px;
       max-width: 380px;
       width: 380px;
-      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.12);
+      box-shadow: var(--shadow-hover);
       border: 1px solid var(--border-light);
       position: relative;
     }
@@ -572,13 +608,14 @@
     }
 
     .close-modal:hover {
-      color: var(--text-primary);
+      color: var(--accent-hover);
     }
 
     .modal-content h2 {
       font-size: 1.9rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      color: var(--text-primary);
     }
 
     .form-group {
@@ -612,6 +649,11 @@
       border-color: var(--text-secondary);
     }
 
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+
     .submit-btn {
       background: var(--button-bg);
       color: var(--button-text);
@@ -626,8 +668,7 @@
     }
 
     .submit-btn:hover {
-      background: var(--text-primary);
-      color: var(--bg-primary);
+      background: var(--accent-hover);
     }
 
     /* ============================================
@@ -717,7 +758,7 @@
         <a class="nav-link active" data-section="home">About</a>
         <a class="nav-link" data-section="portfolio">Portfolio</a>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
-          <i class="bx bx-sun" id="theme-icon"></i>
+          <i class="bx bx-moon" id="theme-icon"></i>
         </button>
       </nav>
     </header>
@@ -832,7 +873,7 @@
               </div>
             </div>
 
-            <!-- PROJECT CARD 2: Cloud Dashboard (Placeholder) -->
+            <!-- PROJECT CARD 2: Cloud Dashboard -->
             <div class="portfolio-card">
               <div class="portfolio-content-wrapper">
                 <div class="portfolio-meta">
@@ -864,7 +905,7 @@
               </div>
             </div>
 
-            <!-- PROJECT CARD 3: Automation Toolkit (Placeholder) -->
+            <!-- PROJECT CARD 3: Automation Toolkit -->
             <div class="portfolio-card">
               <div class="portfolio-content-wrapper">
                 <div class="portfolio-meta">
@@ -982,7 +1023,7 @@
       });
       
       // ============================================
-      // 2. THEME TOGGLE (Light/Dark Mode)
+      // 2. THEME TOGGLE (Dark/Light Mode)
       // ============================================
       const themeToggle = document.getElementById('theme-toggle');
       const body = document.body;
@@ -991,32 +1032,33 @@
       // Check if user has a saved theme preference
       const savedTheme = localStorage.getItem('theme');
       
-      // Apply saved theme or default to light
-      if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-        themeIcon.className = 'bx bx-moon';
-      } else {
-        body.classList.remove('dark-mode');
+      // Apply saved theme (default is dark mode, no class needed)
+      if (savedTheme === 'light') {
+        body.classList.add('light-mode');
         themeIcon.className = 'bx bx-sun';
+      } else {
+        // Dark mode is default (no light-mode class)
+        body.classList.remove('light-mode');
+        themeIcon.className = 'bx bx-moon';
       }
       
       // Toggle theme when button is clicked
       themeToggle.addEventListener('click', function() {
-        // Toggle the dark-mode class on body
-        body.classList.toggle('dark-mode');
+        // Toggle the light-mode class on body
+        body.classList.toggle('light-mode');
         
-        // Check if dark mode is now active
-        const isDarkMode = body.classList.contains('dark-mode');
+        // Check if light mode is now active
+        const isLightMode = body.classList.contains('light-mode');
         
-        // Update the icon
-        if (isDarkMode) {
-          themeIcon.className = 'bx bx-moon';
-        } else {
+        // Update the icon (moon for dark, sun for light)
+        if (isLightMode) {
           themeIcon.className = 'bx bx-sun';
+        } else {
+          themeIcon.className = 'bx bx-moon';
         }
         
         // Save the preference to localStorage
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
       });
       
       // ============================================
@@ -1065,7 +1107,12 @@
           
         } catch (error) {
           console.log('Weather error:', error);
-          weatherElement.textContent = '—° · Local';
+          
+          // Fallback: show local time
+          const now = new Date();
+          const hours = now.getHours().toString().padStart(2, '0');
+          const minutes = now.getMinutes().toString().padStart(2, '0');
+          weatherElement.textContent = `${hours}:${minutes} · Local time`;
         }
       }
       
@@ -1123,9 +1170,6 @@
         
         // Reset the form
         contactForm.reset();
-        
-        // Note: The form will still submit to Formspree because we used preventDefault
-        // For a real implementation, you might want to use fetch() or let it submit naturally
       });
       
       // ============================================
@@ -1142,7 +1186,7 @@
       }
       
       // ============================================
-      // 7. INITIALIZE - Show home section by default
+      // 7. INITIALIZE - Show home section
       // ============================================
       showSection('home');
       
