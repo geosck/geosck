@@ -1,71 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-  <title>geosck.com</title>
-  <!-- Boxicons for icons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Geoffrey · Portfolio</title>
+  <!-- Apple-style SF-like font: Inter (clean, modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light-mode">
   <div class="page-wrapper">
-    <!-- HEADER - Navigation and theme toggle -->
     <header class="header">
       <h2 class="logo">Geoffrey.</h2>
       <nav>
         <a class="nav-link active" data-section="home">About</a>
         <a class="nav-link" data-section="portfolio">Portfolio</a>
-        <div class="theme-toggle-wrapper">
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <i class="bx bx-sun"></i>
-          </button>
-        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <i class="bx bx-sun"></i>
+        </button>
       </nav>
     </header>
 
-    <!-- MAIN CONTENT - Dynamic sections -->
     <main class="main-content">
-      <!-- HOME SECTION -->
+      <!-- HOME / ABOUT -->
       <section id="home" class="section active">
         <div class="content">
           <p class="greeting">Hei 👋</p>
           <h1>I'm Geoffrey,</h1>
-          <p class="bio">
-            I have experience in technical support, troubleshooting, and system maintenance, with a strong passion for IT infrastructure.
-          </p>
-          
-          <!-- Contact row with email and live weather -->
+          <p class="bio">I have experience in technical support, troubleshooting, and system maintenance, with a strong passion for IT infrastructure.</p>
           <div class="contact-row">
             <button class="contact-button" id="contact-popup-btn">eMail</button>
-            <span class="weather-time" id="weather-time">Loading weather...</span>
+            <span class="weather-time" id="weather-time">Loading weather…</span>
           </div>
-          
-          <!-- Social media links -->
           <div class="social-icons">
             <a href="https://github.com/geosck" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
             <a href="https://www.linkedin.com/in/geosck/" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
             <a href="https://x.com/home" target="_blank" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
           </div>
         </div>
-        
-        <!-- Profile image -->
         <div class="profile-image">
-          <img src="geoffrey.png" alt="Geoffrey's profile picture" />
+          <img src="geoffrey.png" alt="Geoffrey's profile">
         </div>
       </section>
 
-      <!-- PORTFOLIO SECTION - 20% WIDER -->
+      <!-- PORTFOLIO SECTION -->
       <section id="portfolio" class="section">
         <div class="portfolio-content">
           <h2>My Portfolio</h2>
           <p class="portfolio-subtitle">Projects, case studies, and work samples</p>
-          
-          <!-- Portfolio cards grid - 3 per row -->
           <div class="portfolio-items">
-            
-            <!-- CARD 1: Pocket Gym -->
+            <!-- Card 1: Pocket Gym -->
             <div class="portfolio-card">
               <div class="portfolio-content-wrapper">
                 <div class="portfolio-meta">
@@ -73,103 +62,44 @@
                   <span class="portfolio-date-text"><i class='bx bx-calendar'></i> 15 Mar 2024</span>
                 </div>
                 <h3>pocket gym · hand‑drawn feel</h3>
-                
-                <!-- Pocket Gym Preview -->
                 <div class="pocket-gym-preview">
                   <div class="gym-mini-header">
-                    <div class="gym-mini-title">
-                      <span class="gym-mini-icon"><i class='bx bx-dumbbell'></i></span>
-                      <span>full body · 3 days/week</span>
-                    </div>
+                    <div class="gym-mini-title"><span class="gym-mini-icon"><i class='bx bx-dumbbell'></i></span><span>full body · 3 days/week</span></div>
                     <div class="gym-mini-badge">day A</div>
                   </div>
-                  
                   <div class="gym-mini-exercises">
-                    <div class="gym-mini-exercise">
-                      <span>Goblet Squat</span>
-                      <span class="gym-mini-sets">3x10-12</span>
-                    </div>
-                    <div class="gym-mini-exercise">
-                      <span>Dumbbell Floor Press</span>
-                      <span class="gym-mini-sets">3x10-12</span>
-                    </div>
-                    <div class="gym-mini-exercise">
-                      <span>Resistance Band Row</span>
-                      <span class="gym-mini-sets">3x10-12</span>
-                    </div>
-                    <div class="gym-mini-exercise">
-                      <span>Plank</span>
-                      <span class="gym-mini-sets">3x20-30s</span>
-                    </div>
+                    <div class="gym-mini-exercise"><span>Goblet Squat</span><span class="gym-mini-sets">3x10-12</span></div>
+                    <div class="gym-mini-exercise"><span>Dumbbell Floor Press</span><span class="gym-mini-sets">3x10-12</span></div>
+                    <div class="gym-mini-exercise"><span>Resistance Band Row</span><span class="gym-mini-sets">3x10-12</span></div>
+                    <div class="gym-mini-exercise"><span>Plank</span><span class="gym-mini-sets">3x20-30s</span></div>
                   </div>
-                  
-                  <div class="gym-mini-footer">
-                    <span class="gym-mini-phases">
-                      <span class="phase-dot"></span>foundation
-                      <span class="phase-dot"></span>strength
-                      <span class="phase-dot"></span>hypertrophy
-                    </span>
-                  </div>
+                  <div class="gym-mini-footer"><span class="gym-mini-phases"><span class="phase-dot"></span>foundation<span class="phase-dot"></span>strength<span class="phase-dot"></span>hypertrophy</span></div>
                 </div>
-                
-                <p class="portfolio-excerpt">
-                  An interactive workout tracker with a hand-drawn, organic aesthetic. Features video demonstrations, 
-                  phase-based progression (foundation → strength → hypertrophy), and a satisfying completion system 
-                  with confetti celebrations.
-                </p>
-                
+                <p class="portfolio-excerpt">Interactive workout tracker with hand-drawn organic aesthetic. Video demos, phase progression, confetti celebrations.</p>
                 <div class="portfolio-footer">
                   <div class="portfolio-author"><i class='bx bx-user-circle'></i><span>Geoffrey</span></div>
                   <a href="#" class="view-project" id="open-pocket-gym">View Live <i class='bx bx-right-arrow-alt'></i></a>
                 </div>
               </div>
             </div>
-
-            <!-- CARD 2: Template -->
+            <!-- Card 2 placeholder -->
             <div class="portfolio-card">
               <div class="portfolio-content-wrapper">
-                <div class="portfolio-meta">
-                  <span class="portfolio-category">hei</span>
-                  <span class="portfolio-date-text"><i class='bx bx-calendar'></i> 0 0 0</span>
-                </div>
-                <h3>loading...</h3>
-                
-                <div class="card-preview">
-                  <span>Project preview coming soon</span>
-                </div>
-                
-                <p class="portfolio-excerpt">
-                  Project description will appear here. This is a placeholder for future projects that will be added to the portfolio.
-                </p>
-                
-                <div class="portfolio-footer">
-                  <div class="portfolio-author"><i class='bx bx-user-circle'></i><span>Geoffrey</span></div>
-                  <a href="#" class="view-project">View Project <i class='bx bx-right-arrow-alt'></i></a>
-                </div>
+                <div class="portfolio-meta"><span class="portfolio-category">in progress</span><span class="portfolio-date-text"><i class='bx bx-calendar'></i> upcoming</span></div>
+                <h3>cloud dashboard</h3>
+                <div class="card-preview" style="height:140px; display:flex; align-items:center; justify-content:center; background:var(--bg-tertiary); border-radius:18px;">✨ preview</div>
+                <p class="portfolio-excerpt">Real-time infrastructure monitoring with sleek metrics and zero-config setup.</p>
+                <div class="portfolio-footer"><div class="portfolio-author"><i class='bx bx-user-circle'></i><span>Geoffrey</span></div><a href="#" class="view-project">Details <i class='bx bx-right-arrow-alt'></i></a></div>
               </div>
             </div>
-
-            <!-- CARD 3: Template -->
+            <!-- Card 3 -->
             <div class="portfolio-card">
               <div class="portfolio-content-wrapper">
-                <div class="portfolio-meta">
-                  <span class="portfolio-category">hei</span>
-                  <span class="portfolio-date-text"><i class='bx bx-calendar'></i> 0 0 0</span>
-                </div>
-                <h3>loading...</h3>
-                
-                <div class="card-preview">
-                  <span>Project preview coming soon</span>
-                </div>
-                
-                <p class="portfolio-excerpt">
-                  Project description will appear here. This is a placeholder for future projects that will be added to the portfolio.
-                </p>
-                
-                <div class="portfolio-footer">
-                  <div class="portfolio-author"><i class='bx bx-user-circle'></i><span>Geoffrey</span></div>
-                  <a href="#" class="view-project">View Project <i class='bx bx-right-arrow-alt'></i></a>
-                </div>
+                <div class="portfolio-meta"><span class="portfolio-category">tool</span><span class="portfolio-date-text"><i class='bx bx-calendar'></i> 2025</span></div>
+                <h3>automation toolkit</h3>
+                <div class="card-preview" style="height:140px; display:flex; align-items:center; justify-content:center; background:var(--bg-tertiary); border-radius:18px;">⚙️ CLI & scripts</div>
+                <p class="portfolio-excerpt">Collection of scripts and utilities for IT workflow automation, built with Python & bash.</p>
+                <div class="portfolio-footer"><div class="portfolio-author"><i class='bx bx-user-circle'></i><span>Geoffrey</span></div><a href="#" class="view-project">Explore <i class='bx bx-right-arrow-alt'></i></a></div>
               </div>
             </div>
           </div>
@@ -177,7 +107,6 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <p>© Geoffrey. All rights reserved.</p>
     </footer>
@@ -188,25 +117,16 @@
     <div class="modal-content">
       <span class="close-modal">&times;</span>
       <h2>Get In Touch</h2>
-      <p>Have a question or want to collaborate? Send me a message!</p>
+      <p style="color: var(--text-secondary); margin-bottom:1.5rem;">Have a question or want to collaborate?</p>
       <form id="popup-contact-form" action="https://formspree.io/f/mqapavqv" method="POST">
-        <div class="form-group">
-          <label for="popup-name">Name</label>
-          <input type="text" id="popup-name" name="name" placeholder="Your name" required />
-        </div>
-        <div class="form-group">
-          <label for="popup-email">Email</label>
-          <input type="email" id="popup-email" name="email" placeholder="Your email" required />
-        </div>
-        <div class="form-group">
-          <label for="popup-message">Message</label>
-          <textarea id="popup-message" name="message" rows="4" placeholder="Your message" required></textarea>
-        </div>
+        <div class="form-group" style="margin-bottom:1.2rem;"><label>Name</label><input type="text" name="name" placeholder="Your name" style="width:100%; padding:0.8rem; border-radius:16px; border:1px solid var(--border-medium); background:var(--bg-tertiary);"></div>
+        <div class="form-group" style="margin-bottom:1.2rem;"><label>Email</label><input type="email" name="email" placeholder="Your email"></div>
+        <div class="form-group"><label>Message</label><textarea name="message" rows="3" placeholder="Your message" style="width:100%; padding:0.8rem; border-radius:16px;"></textarea></div>
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
     </div>
   </div>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
