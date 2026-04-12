@@ -21,23 +21,31 @@
     });
   });
 
-  // ---------- THEME TOGGLE (two-color light/dark) ----------
+  // ---------- THEME TOGGLE (FIXED) ----------
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
   const themeIcon = themeToggle.querySelector('i');
   
+  // Set initial icon based on saved theme
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
-    themeIcon.classList.remove('bx-sun');
-    themeIcon.classList.add('bx-moon');
+    themeIcon.className = 'bx bx-moon';
+  } else {
+    themeIcon.className = 'bx bx-sun';
   }
   
   themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     const isDark = body.classList.contains('dark-mode');
-    themeIcon.classList.toggle('bx-sun', !isDark);
-    themeIcon.classList.toggle('bx-moon', isDark);
+    
+    // Update icon
+    if (isDark) {
+      themeIcon.className = 'bx bx-moon';
+    } else {
+      themeIcon.className = 'bx bx-sun';
+    }
+    
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 
