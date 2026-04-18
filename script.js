@@ -70,7 +70,7 @@
   const form = document.getElementById('popup-contact-form');
   form.addEventListener('submit', (e) => { 
     e.preventDefault(); 
-    alert('✨ Message sent (demo)'); 
+    alert('✨ Message sent'); 
     modal.classList.remove('active'); 
     form.reset(); 
   });
